@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yashvi Srivastava — Content Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --dark: #141414;
+    --card: #1a1a1a;
+    --border: #262626;
+    --orange: #f4522a;
+    --orange-dim: #c23d1a;
+    --cream: #e8e0d5;
+    --muted: #888;
+    --dim: #555;
+  }
+
+  html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus,
+a:active,
+a:visited {
+  outline: none;
+  color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 56px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    color: var(--orange);
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange-dim); }
+
+  /* PAGE 1 — HERO */
+  .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 8%;
+}
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 64px 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex-shrink: 0; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .hero-headline { line-height: 0.9; margin-bottom: 48px; }
+  .hl-plain {
+    display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(72px, 10vw, 130px);
+  color: var(--cream);
+  letter-spacing: -2px;
+  }
+  .hl-italic {
+     display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(64px, 9vw, 118px);
+  color: var(--orange);
+  margin-top: -10px;
+  }
+  .hl-ghost {
+     position: relative;
+  top: -10px;
+     display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(72px, 10vw, 130px);
+  color: transparent;
+  -webkit-text-stroke: 1px #2a2a2a;
+  letter-spacing: -2px;
+  opacity: 0.6;
+  }
+
+  .hero-body {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 48px;
+  }
+  .hero-body strong { color: var(--cream); font-weight: 500; }
+
+  .hero-btns { display: flex; gap: 14px; }
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 16px 28px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--orange-dim); }
+  .btn-ghost {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border);
+    padding: 16px 28px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--muted); }
+
+  /* PAGE 2 — STATS + PORTFOLIO */
+  #stats-portfolio {
+    padding-top: 56px;
+  }
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-cell {
+    padding: 40px 40px 36px;
+    border-right: 1px solid var(--border);
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-n {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 1px;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-n .accent { color: var(--orange); }
+  .stat-l {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .portfolio-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 64px 64px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  
+  .section-label {
+  color: var(--orange);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Inter', sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 800;
+  color: var(--cream);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  }
+  .accent {
+  color: var(--cream); /* keep white (image is subtle, not orange) */
+}
+  .portfolio-hint {
+    font-size: 13px;
+    color: var(--dim);
+    max-width: 240px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* Button styling */
+  .header-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.view-more-btn {
+
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Hidden menu */
+.reel-menu {
+  position: absolute;
+  top: 110%;   /* directly below button */
+  right: 0;
+
+  width: 260px;
+  background: #111;
+  border: 1px solid #333;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+/* Show menu */
+.reel-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Each item */
+.reel-item {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 12px 16px;
+  text-decoration: none;
+  color: white;
+
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+}
+
+/* Hover effect */
+.reel-item:hover {
+  background: #1a1a1a;
+}
+  .portfolio-grid {
+     
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 380px;
+  }
+  .portfolio-grid a {
+  height: 100%;
+}
+  /* FIXED CLICKABLE CARDS */
+.portfolio-grid a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* CARD DESIGN (unchanged look restored) */
+.port-card {
+  position: relative;
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  padding: 24px;
+  min-height: 380px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.port-card:last-child {
+  border-right: none;
+}
+
+.port-card:hover {
+  filter: brightness(1.15);
+  transform: translateY(-5px);
+}
+  
+  .port-card:last-child { border-right: none; }
+  .port-card:hover { 
+    filter: brightness(1.15); 
+     transform: translateY(-5px);
+  transition: 0.3s;
+}
+  .port-card.reel-1 { background: #2a0e00; }
+  .port-card.reel-2 { background: #0d1022; }
+  .port-card.script { background: #0a1a0d; }
+
+  .port-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--orange);
+    color: #fff;
+    padding: 5px 12px;
+  }
+  .port-thumb {
+  position: absolute;
+  inset: 0;                 /* fills full card */
+  z-index: 0;
+}
+
+.port-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* no stretching */
+  filter: brightness(0.7);  /* dark overlay for text readability */
+  transition: 0.4s ease;
+}
+  .port-label {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+
+  /* PAGE 3 — WHO I AM */
+  #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 64px 80px;
+  }
+  .about-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+    margin-bottom: 64px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.35;
+    color: var(--cream);
+    margin-bottom: 40px;
+  }
+  .about-quote .highlight { color: var(--orange); }
+  .about-body {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  .about-body p { margin-bottom: 20px; }
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .about-table { width: 100%; }
+  .about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .about-row:first-child { border-top: 1px solid var(--border); }
+  .about-key { font-size: 13px; color: var(--dim); }
+  .about-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--cream);
+  }
+  .about-val.orange { color: var(--orange); }
+
+  /* PAGE 4 — SERVICES */
+  #services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 64px 80px;
+  }
+  .services-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+    margin-bottom: 0;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .service-card {
+    padding: 48px 40px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: var(--card); }
+  .service-card:nth-child(2n) { border-right: none; }
+  .service-card:nth-child(3), .service-card:nth-child(4) { border-bottom: none; }
+  .service-num {
+    font-size: 11px;
+    color: var(--orange);
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .service-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--cream);
+    margin-bottom: 14px;
+  }
+  .service-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+     font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--cream);
+    margin-bottom: 40px;
+  }
+
+  /* PAGE 5 — ACHIEVEMENTS */
+  #achievements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 64px 80px;
+  }
+  .ach-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+    margin-bottom: 64px;
+  }
+  .ach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .ach-card {
+    background: var(--dark);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+  }
+  .ach-card:hover { background: var(--card); }
+  .ach-icon { font-size: 32px; margin-bottom: 24px; }
+  .ach-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .ach-num.gold { color: #c9a84c; }
+  .ach-num.orange { color: var(--orange); }
+  .ach-num.cream { color: var(--cream); }
+  .ach-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  .ach-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+  .ach-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    align-self: flex-start;
+  }
+
+  /* PAGE 6 — CONTACT */
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 64px 0;
+  }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 80px;
+  }
+  .contact-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 8vw, 108px);
+    letter-spacing: 1.3px;
+    line-height: 0.9;
+    color: var(--cream);
+    margin-bottom: 40px;
+  }
+  .contact-headline .italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+    font-size: clamp(56px, 7.5vw, 100px);
+    display: block;
+  }
+  .contact-body {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 380px;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1px; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    margin-bottom: 2px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .contact-link:hover { background: var(--card); border-color: var(--dim); }
+  .contact-link-left { display: flex; align-items: center; gap: 16px; }
+  .contact-link-icon {
+    width: 36px; height: 36px;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .contact-link-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 3px;
+  }
+  .contact-link-value {
+    font-size: 14px;
+    color: var(--cream);
+  }
+  .contact-arrow { color: var(--orange); font-size: 18px; }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+  .footer-logo span { color: var(--orange); }
+  .footer-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .fade-up-d1 { animation-delay: 0.1s; opacity: 0; }
+  .fade-up-d2 { animation-delay: 0.25s; opacity: 0; }
+  .fade-up-d3 { animation-delay: 0.4s; opacity: 0; }
+  .fade-up-d4 { animation-delay: 0.55s; opacity: 0; }
+  .fade-up-d5 { animation-delay: 0.7s; opacity: 0; }
+
+  /* CHARACTER CONTAINER */
+.hero-character {
+  flex: 1;
+  position: absolute;
+  right: -300px;
+  bottom: 60px;
+   justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: slideInCharacter 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* IMAGE */
+.hero-character img {
+  width: 650px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+  transform: translateY(10px);
+}
+
+/* SPEECH BUBBLE */
+.speech-bubble {
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* Bubble tail */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+/* Slide animation */
+@keyframes slideInCharacter {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 64px;
+    opacity: 1;
+  }
+}
+
+.hero-character {
+  animation: slideInCharacter 1s ease forwards, floatChar 3s ease-in-out infinite;
+}
+
+@keyframes floatChar {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yashvi<span> </span>Srivastava</div>
+  <ul class="nav-links">
+    <li><a href="#stats-portfolio">Content</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Collab →</a>
+</nav>
+
+<!-- PAGE 1: HERO -->
+<section id="hero">
+  <div class="hero-status fade-up fade-up-d1">
+    <span class="dot"></span>
+    Content Creator & Writer
+  </div>
+  <div class="hero-headline">
+    <span class="hl-plain fade-up fade-up-d2">I engineer</span>
+    <span class="hl-italic fade-up fade-up-d3">content that</span>
+    <span class="hl-ghost fade-up fade-up-d4">connects.</span>
+  </div>
+  <p class="hero-body fade-up fade-up-d4">
+    Short-form creator crafting <strong>reels, scripts & stories</strong> for the scroll-first generation.<strong> (TBH, AI CAN'T WRITE)</strong>
+  <div class="hero-btns fade-up fade-up-d5">
+    <a href="#stats-portfolio" class="btn-primary">Creations →</a>
+    <a href="#contact" class="btn-ghost">Let's create</a>
+  </div>
+  <div class="hero-character">
+  <img src="ghibli.png" alt="Ghibli Portrait">
+  
+</div>
+</section>
+
+<!-- PAGE 2: STATS + PORTFOLIO -->
+<section id="stats-portfolio">
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <div class="stat-n">2<span class="accent">K+</span></div>
+      <div class="stat-l">Followers in 3 months</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">2<span class="accent">M+</span></div>
+      <div class="stat-l">Organic audience on reels</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n"><span class="accent">R</span>1</div>
+      <div class="stat-l">KKCreate Hiring Shortlisted</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">90<span class="accent">d</span></div>
+      <div class="stat-l">From zero to viral</div>
+    </div>
+  </div>
+
+  <div class="portfolio-header">
+  <div>
+    <div class="section-eyebrow"></div>
+    <div class="section-title">My Creations</div>
+  </div>
+
+  <div class="header-right">
+    <button class="view-more-btn">View cool stuff →</button>
+
+    <div class="reel-menu">
+      <a href="https://www.instagram.com/reel/DGdKN1Uovjg/?igsh=OW83cGp0d2RoZ2Fp" class="reel-item">
+        <span>Procastination</span><span>→</span>
+      </a>
+      <a href="https://www.instagram.com/reel/DHs9ZfiSFNc/?igsh=MTB0ajY1ZHZpOHkyaw==" class="reel-item">
+        <span>Friend or Foe</span><span>→</span>
+      </a>
+      <a href="https://www.instagram.com/reel/DF5FOvAoaAo/?igsh=MXQ1Y293MG42czdybw==" class="reel-item">
+        <span>Laptop</span><span>→</span>
+      </a>
+      <a href="https://www.instagram.com/reel/DJO08-PS373/?igsh=eXBiNDQxcnV3YXN6" class="reel-item">
+        <span>Life Ka Algorithm</span><span>→</span>
+      </a>
+      <a href="https://www.instagram.com/reel/DFnEmb5yHJT/?igsh=MTUzNG04cndraHNkYg==" class="reel-item">
+        <span>Maggie</span><span>→</span>
+      </a>
+      <a href="https://www.instagram.com/reel/DNNv1pBSHRx/?igsh=MmNsOHFjYWdnczJ4" class="reel-item">
+        <span>Tie or Noose</span><span>→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class="portfolio-grid">
+
+    <a href="https://www.instagram.com/reel/DFFnR7oS9xN/?igsh=MWo2ejVlOTR5NWplOA==" target="_blank">
+     <div class="port-card reel-1">
+      <div class="port-badge">Reel</div>
+      <div class="port-thumb">
+  <img src="reel1-thumbnail.png" alt="Reel 01">
+</div>
+      <div class="port-label">Reel 01</div>
+    </div>
+     </a>
+
+     <a href="https://www.instagram.com/reel/DFVEBGySSyX/?igsh=MXJmeHp0cXY5ajgyaA==" target="_blank">
+   <div class="port-card reel-2">
+      <div class="port-badge">Reel</div>
+      <div class="port-thumb">
+  <img src="reel2-thumbnail.jpeg" alt="Reel 02">
+</div>
+      <div class="port-label">Reel 02</div>
+    </div>
+    </a>
+
+<a href="https://www.instagram.com/reel/DG26b94ToSF/?igsh=Z2ZoOHViMWE4aGgx" target="_blank">
+    <div class="port-card script">
+      <div class="port-badge">Script</div>
+      <div class="port-thumb">
+  <img src="reel3-thumbnail.jpeg" alt="Reel 02"> </div>
+      <div class="port-label">Ad Script</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3: WHO I AM -->
+<section id="about">
+  <div class="about-header">
+    <div class="section-eyebrow">only if you want to</div>
+    <div class="section-title">Know me</div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <div class="about-quote">
+        "Engineering content,<br> that makes people <span class="highlight">stop scrolling.</span>"
+      </div>
+      <div class="about-body">
+        <p>Hi! I’m <strong>Yashvi Srivastava </strong>, a final-year undergrad studying Computer Science and Engineering. I’ve been diving into engineering and it almost drowned me. What kept me alive, is building content that's not mere words but the <strong>CONTENT THAT CONNECTS</strong>.</p>
+        <p><strong>Only Achievement -</strong> I've build an Instagram page, just 2K followers and only millions of views in three months? No big deal, I guess. The one and only thing I ever used? My overthinker brain.</p>
+        <p>I was <strong>shortlisted in KKCreate's creator hiring program </strong>in Round 1, which means industry professionals have validated what the numbers already show: this content works.</p>
+      </div>
+    </div>
+    <div class="about-table">
+      <div class="about-row">
+        <span class="about-key">Platform</span>
+        <span class="about-val">Instagram</span>
+      </div>
+      <div class="about-row">
+        <span class="about-key">Content Type</span>
+        <span class="about-val">Reels + Scripts</span>
+      </div>
+      <div class="about-row">
+        <span class="about-key">Niche</span>
+        <span class="about-val">[ Open ]</span>
+      </div>
+      <div class="about-row">
+        <span class="about-key">Followers</span>
+        <span class="about-val orange">2K+ in 3 months</span>
+      </div>
+      <div class="about-row">
+        <span class="about-key">Total Views</span>
+        <span class="about-val orange">2M+ organic</span>
+      </div>
+      <div class="about-row">
+        <span class="about-key">Open For</span>
+        <span class="about-val">Brand Collabs · UGC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4: SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-eyebrow">what i can do</div>
+    <div class="section-title">For You</div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num"></div>
+      <div class="service-title">Reel Scripting</div>
+      <div class="service-desc">Engineering Scripts that makes people stop in first 3 seconds - because that's all you get.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num"></div>
+      <div class="service-title">UGC Content</div>
+      <div class="service-desc">User-generated style content that feels authentic and native. Built to run as ads without looking like one.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num"></div>
+      <div class="service-title">Brand Collaborations</div>
+      <div class="service-desc">Sponsored reels and posts that fit naturally into my content, not forced integrations. Your brand, my audience's trust.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num"></div>
+      <div class="service-title">Content Strategy</div>
+      <div class="service-desc">Content pillars, posting cadence, format planning. A clear strategy as every post is burdened with glorious purpose.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 5: ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="ach-header">
+    <div class="section-eyebrow">only </div>
+    <div class="section-title">Achievements</div>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <div class="ach-icon">🏆</div>
+      <div class="ach-num gold">R1</div>
+      <div class="ach-title">KKCreate Shortlisted</div>
+      <div class="ach-desc">Selected in Round 1 of KKCreate's competitive creator hiring program (My content just got validated by industry).</div>
+      <div class="ach-tag">Industry Recognition</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon">👁️</div>
+      <div class="ach-num orange">2M+</div>
+      <div class="ach-title">Organic Views</div>
+      <div class="ach-desc">Back to back views crossed in million across 3 Instagram Reels with zero paid promotion, purely content-driven reach.</div>
+      <div class="ach-tag">Milestone</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon">📈</div>
+      <div class="ach-num cream">2K</div>
+      <div class="ach-title">Followers in 90 Days</div>
+      <div class="ach-desc">Built an engaged audience from zero in 3 months through consistent, strategic, hook-driven content.</div>
+      <div class="ach-tag">Growth</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6: CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="contact-headline">
+        Let's create<br>something
+        <span class="italic">viral.</span>
+      </div>
+      <div class="contact-body">
+        If you're looking for someone who is completely unaware of the fact that AI could write, You're at the right place. Let's connect and build something crazy.
+      </div>
+    </div>
+    <div class="contact-links">
+
+      <a href="mailto:yashvi.sriv@gmail.com" class="contact-link">
+  <div class="contact-link-left">
+    <div class="contact-link-icon">✉️</div>
+    <div>
+      <div class="contact-link-label">Email</div>
+      <div class="contact-link-value">yashvi.sriv@gmail.com</div>
+    </div>
+  </div>
+  <div class="contact-arrow">→</div>
+</a>
+      <a href="https://instagram.com/_shayara._" target="_blank" class="contact-link">
+  <div class="contact-link-left">
+    <div class="contact-link-icon">📱</div>
+    <div>
+      <div class="contact-link-label">Instagram</div>
+      <div class="contact-link-value">@_shayara._</div>
+    </div>
+  </div>
+  <div class="contact-arrow">→</div>
+</a>
+      <a href="https://www.linkedin.com/in/yashvi-sriv" target="_blank" class="contact-link">
+  <div class="contact-link-left">
+    <div class="contact-link-icon">💼</div>
+    <div>
+      <div class="contact-link-label">LinkedIn</div>
+      <div class="contact-link-value">yashvi-sriv</div>
+    </div>
+  </div>
+  <div class="contact-arrow">→</div>
+</a>
+    </div>
+  </div>
+  <div class="site-footer">
+    
+    <div class="footer-tagline">An Enginner that crafts content not code</div>
+  </div>
+</section>
+
+</body>
+<script>
+   const btn = document.querySelector(".view-more-btn");
+  const menu = document.querySelector(".reel-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
+</html>
